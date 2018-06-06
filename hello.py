@@ -1,11 +1,12 @@
+#筛选回文
 def is_palindrome(n):
     nStr = str(n)
     nLength =int(len(nStr))
     if nLength%2 == 0:
-        if nStr[:int(nLength/2)] == nStr[int(nLength/2):nLength]:
+        if nStr[:int(nLength/2)] == nStr[int(nLength/2):nLength][::-1]:
             return n
     else:
-        if nStr[:int((nLength-1)/2)] == nStr[int((nLength-1)/2+1):nLength]:
+        if nStr[:int((nLength-1)/2)] == nStr[int((nLength-1)/2+1):nLength][::-1]:
             return n
 output = filter(is_palindrome, range(1, 1000))
 print('1~1000:', list(output))
